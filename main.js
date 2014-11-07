@@ -1,11 +1,32 @@
 function displayOutput(){
-return $("#displayoutput").val()
+  return $("#displayoutput").val()
 }
-function press(buttonValue){
-  if(buttonValue === "+" || buttonValue ==="-" || buttonValue ==="*" || buttonValue ==="/" ){
 
-  } else {
-    var current = $("#displayoutput").val();
-    $("#displayoutput").val(current +=buttonValue)
-  }
-}
+var prior = 0;
+
+function press(buttonValue){
+  switch (buttonValue){
+    case "+":
+      prior += +$("#displayoutput").val();
+      $("#displayoutput").val(current += buttonValue);
+      break;
+      case "-":
+        break;
+        case "*":
+          break;
+          case "/":
+            break;
+            case "C":
+              break;
+              case "+/-":
+                break;
+                case "=":
+                  prior += +$("#displayoutput").val();
+                  $("#displayoutput").val();
+                  prior = 0;
+                  break;
+                default:
+                  current = $("#displayoutput").val();
+                  $("#displayoutput").val(current += buttonValue);
+                }
+              }

@@ -3,9 +3,10 @@
 });
 
 describe("Entering numbers", function(){
+
   beforeEach(function(){
     $("#displayoutput").val("");
-  });
+  })
   describe("displayOutput", function(){
     it("should return the value of the dipsplay", function(){
       $("#displayoutput").val("1.23");
@@ -25,77 +26,61 @@ describe("Entering numbers", function(){
       press('.');
       press("8");
       press("9");
-      it("should be 7.89", function(){
-        assert.equal(displayOutput(), "10.89");
-        // });
-      });
+      assert.equal(displayOutput(), "7.89");
     });
   });
+
 
   describe("adding", function(){
     describe("7.89 + 1 + 2 = should be 10.89", function (){
-      press('7');
-      press('.');
-      press("8");
-      press("9");
-      press("+");
-      press("1");
-      press("+");
-      press("2");
-      press("=");
       it("should be 10.89", function (){
-        assert(false);
+        press('7');
+        press('.');
+        press("8");
+        press("9");
+        press("+");
+        press("1");
+        press("+");
+        press("2");
+        press("=");
+        assert.equal(eval(displayOutput()), 10.89);
       })
     });
     describe("7.89 + 1.00 + 2 = should be 10.89", function (){
-      press('7');
-      press('.');
-      press("8");
-      press("9");
-      press("+");
-      press("1.00");
-      press("+");
-      press("2");
-      press("=");
       it("should be 10.89", function (){
-        assert(false);
+        press('7');
+        press('.');
+        press("8");
+        press("9");
+        press("+");
+        press("1");
+        press(".");
+        press("0");
+        press("0");
+        press("+");
+        press("2");
+        press("=");
+        assert.equal(eval(displayOutput()), 10.89);
       })
     });
     describe("1 + 1 should be 2", function (){
-      press("1");
-      press("+");
-      press("1");
-      press("=");
-      it("should be 2", function (){
-        assert(false);
+      it("1 + 1 should be 2", function(){
+        press("1");
+        press("+");
+        press("1");
+        press("=");
+        assert.equal(eval(displayOutput()), 2);
       });
     });
-    describe(".9 + .1 should be 1", function (){
-      press(".");
-      press("9");
-      press("+");
-      press(".1");
-      it(".9 + .1 = should be 1", function (){
-        assert(false);
+    describe(".1 + .2 should be .3", function (){
+      it(".1 + .2 = should be .3", function (){
+        press(".");
+        press("1");
+        press("+");
+        press(".");
+        press("2");
+        assert.equal(eval(displayOutput()), .3);
       });
-    });
-  });
-
-  describe("Subtraction", function(){
-    describe("Entering 1 * 1", function(){
-      assert(true)
-    });
-  });
-
-  describe("Multiplication", function(){
-    describe("Entering 1 * 1", function(){
-      assert(true)
-    });
-  });
-
-  describe("Division", function(){
-    describe("Entering 1 * 1", function(){
-      assert(true)
     });
   });
 });
