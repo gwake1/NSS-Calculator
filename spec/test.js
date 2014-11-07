@@ -3,13 +3,12 @@
 });
 
 describe("Entering numbers", function(){
-
   beforeEach(function(){
     $("#displayoutput").val("");
   });
   describe("displayOutput", function(){
     it("should return the value of the dipsplay", function(){
-      $("#displayOutput").val("1.23");
+      $("#displayoutput").val("1.23");
       assert.equal(displayOutput(), "1.23");
     });
   });
