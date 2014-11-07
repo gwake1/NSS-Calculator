@@ -1,0 +1,34 @@
+{
+  "name": "NSS-Calculator",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gwake1/NSS-Calculator",
+  "authors": [
+    "Gerald & Chris"
+  ],
+  "description": "adding QUnit testing functionality",
+  "main": "index.html",
+  "keywords": [
+    "calculator"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec",
+    "specs"
+  ],
+  "dependencies": {
+    "mocha": "~2.0.1",
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1",
+    "chai": "~1.9.2"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1",
+    "mocha": "~2.0.1",
+    "chai": "~1.9.2"
+  }
+}
