@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
 </head>
 <body>
-  <div id="mocha"></div>
+  <div id="mocha">
+    <div class="mocha-fixture hidden">
+      <input id="displayoutput">
+    </div>
+  </div>
 
   <script src="../bower_components/mocha/mocha.js"></script>
   <script>mocha.setup('bdd');</script>
@@ -22,12 +26,11 @@
   var expect = chai.expect;
   var should = chai.should();
   </script>
-  <script src="../jquery-2.1.1.min.js"></script>
-  <script src="main.js"></script>
-  <script src="test.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <!-- include source files here... -->
-
+  <script src="../main.js"></script>
   <!-- include spec files here... -->
+  <script src="test.js"></script>
   <script>mocha.run()</script>
 
 </body>
