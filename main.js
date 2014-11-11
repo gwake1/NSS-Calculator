@@ -27,10 +27,14 @@ function divide(a, b){
 }
 
 function inverse(a, b){
-  if(nextOperation === "divide"){
-  return (-1*previousresult)/b
+  if(previousOperation === "divide"){
+    return ($('#displayoutput').val(previousResult) * -1)/b;
+  } else if(previousOperation === "multiply") {
+    return $('#displayoutput').val() * -1 * b;
+  } else {
+    return -b;
   }
-
+}
 
 function clear(a, b){
   return '';
@@ -41,12 +45,9 @@ function currentValue(string){
 }
 
 function calculate(){
-  if(nextOperation !== "inverse"){
+  if(nextOperation){
     previousResult = nextOperation(previousResult, currentValue());
-  } else if {nextOperation === "inverse"){
-    previousResult = -previousResult;
-    previousResult = nextOperation(previousResult, currentValue());
-  }else {
+  } else {
     previousResult = currentValue();
   }
 }
@@ -85,7 +86,7 @@ function press(buttonValue){
     case '+/-':
       // calculate();
       nextOperation = inverse;
-      $('#displayoutput').val(previousResult);
+      $('#displayoutput').val('');
       break;
     default:
       var current = $('#displayoutput').val();
