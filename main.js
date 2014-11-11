@@ -28,10 +28,8 @@ function divide(a, b){
 
 function inverse(a, b){
   if(nextOperation === "divide"){
-  return -$('#displayoutput').val()/b;
-} else{
-  return -b;
-}
+  return (-1*previousresult)/b
+  }
 
 
 function clear(a, b){
@@ -43,9 +41,12 @@ function currentValue(string){
 }
 
 function calculate(){
-  if(nextOperation){
+  if(nextOperation !== "inverse"){
     previousResult = nextOperation(previousResult, currentValue());
-  } else {
+  } else if {nextOperation === "inverse"){
+    previousResult = -previousResult;
+    previousResult = nextOperation(previousResult, currentValue());
+  }else {
     previousResult = currentValue();
   }
 }
