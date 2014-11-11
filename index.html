@@ -7,34 +7,36 @@
   <section class="calculator">
     <h1>Casio</h1>
       <div id="screen">
-        <p id="display"></p>
+        <p id="displayoutput"></p>
       </div>
       <div class="buttons">
-              <ul class="operators">
-                <li id="+" value="+">+</li>
-                <li id="-" value="-">-</li>
-                <li id="*" value="*">x</li>
-                <li id="/" value="?">/</li>
-              </ul>
+              <span class="operators">
+                <button id="+" class="clickable" value="+">+</button>
+                <button id="-" class="clickable" value="-">-</button>
+                <button id="*" class="clickable" value="*">x</button>
+                <button id="/" class="clickable" value="?">/</button>
+              </span>
 
-              <ul class="digits">
-                <li id="1" value="1">1</li>
-                <li id="2" value="2">2</li>
-                <li id="3" value="3">3</li>
-                <li id="4" value="4">4</li>
-                <li id="5" value="5">5</li>
-                <li id="6" value="6">6</li>
-                <li id="7" value="7">7</li>
-                <li id="8" value="8">8</li>
-                <li id="9" value="9">9</li>
-                <li id="0" value="0">0</li>
-              </ul>
-              <ul class="commands">
-               <li id="clear" value="#####">C</li>
-               <li id="=" value="=">=</li>
-              </ul>
+              <span class="digits">
+                <button id="1" class="clickable" value="1">1</button>
+                <button id="2" class="clickable" value="2">2</button>
+                <button id="3" class="clickable" value="3">3</button>
+                <button id="4" class="clickable" value="4">4</button>
+                <button id="5" class="clickable" value="5">5</button>
+                <button id="6" class="clickable" value="6">6</button>
+                <button id="7" class="clickable" value="7">7</button>
+                <button id="8" class="clickable" value="8">8</button>
+                <button id="9" class="clickable" value="9">9</button>
+                <button id="0" class="clickable" value="0">0</button>
+              </span>
+              <span class="commands">
+               <button id="clear" class="clickable" value="#####">C</button>
+               <button id="=" class="clickable" value="=">=</button>
+              </span>
       </div>
   </section>
+  <script src="main.js"></script>
+  <script src="scripts/jquery-2.1.1.js"></script>
 </body>
 <footer>
 </footer>
