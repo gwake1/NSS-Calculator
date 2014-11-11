@@ -4,21 +4,38 @@ function displayOutput(){
 
 var previousResult;
 var nextOperation;
+var previousOperation;
 
 function add(a, b){
-  return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+  return ((a * 100000000000000) + (b * 100000000000000))/100000000000000;
+  previousOperation = "add";
 }
 
 function subtract (a, b){
-  return ((a * 100000000000000) - (b * 100000000000000))/100000000000000
+  return ((a * 100000000000000) - (b * 100000000000000))/100000000000000;
+  previousOperation = "subtract";
 }
 
 function multiply(a, b){
   return a * b;
+  previousOperation = "multiply";
 }
 
 function divide(a, b){
   return a/b;
+  previousOperation = "divide";
+}
+
+function inverse(a, b){
+  if(nextOperation === "divide"){
+  return -$('#displayoutput').val()/b;
+} else{
+  return -b;
+}
+
+
+function clear(a, b){
+  return '';
 }
 
 function currentValue(string){
@@ -26,7 +43,7 @@ function currentValue(string){
 }
 
 function calculate(){
-  if(!!nextOperation){
+  if(nextOperation){
     previousResult = nextOperation(previousResult, currentValue());
   } else {
     previousResult = currentValue();
@@ -57,14 +74,17 @@ function press(buttonValue){
       $('#displayoutput').val('');
       break;
     case 'C':
-      // handle C
+      nextOperation = clear;
+      $('#displayoutput').val('');
       break;
     case '=':
       calculate();
       $('#displayoutput').val(previousResult);
       break;
     case '+/-':
-      // handle +/-
+      // calculate();
+      nextOperation = inverse;
+      $('#displayoutput').val(previousResult);
       break;
     default:
       var current = $('#displayoutput').val();

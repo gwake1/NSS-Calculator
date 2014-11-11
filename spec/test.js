@@ -47,6 +47,51 @@
     });
   });
 
+  describe('Inverse', function () {
+    describe('1 +/- =', function(){
+      it('should be -1', function () {
+        type(1, '+/-', '=');
+        assert.equal(displayOutput(), '-1');
+      });
+    });
+    describe('+/- 1 =', function(){
+      it('should be -1', function () {
+        type('+/-',1, '=');
+        assert.equal(displayOutput(), '-1');
+      });
+    });
+    describe('8 +/- =', function(){
+      it('should be -8', function () {
+        type(8, '+/-', '=');
+        assert.equal(displayOutput(), '-8');
+      });
+    });
+    describe('± 1 / 1 =', function(){
+      it('should be -1', function () {
+        type('+/-', 1, '/', 1, '=');
+        assert.equal(displayOutput(), '-1');
+      });
+    });
+    describe('1 ± / 1 =', function(){
+      it('should be -1', function () {
+        type(1, '+/-', '/', 1, '=');
+        assert.equal(displayOutput(), '-1');
+      });
+    });
+    describe('1 / -1 =', function(){
+      it('should be -1', function () {
+        type(1, '/', '+/-', 1, '=');
+        assert.equal(displayOutput(), '-1');
+      });
+    });
+    describe('1 / - 1 =', function(){
+      it('should be -1', function () {
+        type(1, '/', 1, '+/-', '=');
+        assert.equal(displayOutput(), '-1');
+      });
+    });
+  });
+
   describe('Dividing', function () {
     describe('1 / 1 =', function(){
       it('should be 1', function () {
@@ -81,7 +126,7 @@
         assert.equal(displayOutput(), '6.89');
       });
     });
-    xdescribe('7 . 8 9 - 4 = - 2 =', function(){
+    describe('7 . 8 9 - 4 = - 2 =', function(){
       it('should be 1.89', function () {
         type(7, '.', 8, 9, '-', 4, '=', '-', 2, '=');
         assert.equal(displayOutput(), '1.89');
