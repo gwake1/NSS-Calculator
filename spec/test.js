@@ -48,39 +48,39 @@
   });
 
   describe('Inverse', function () {
-    describe('1 +/- =', function(){
+    describe('1 ± =', function(){
       it('should be -1', function () {
-        type(1, '+/-', '=');
+        type(1, '±', '=');
         assert.equal(displayOutput(), '-1');
       });
     });
-    describe('+/- 1 =', function(){
+    describe('± 1 =', function(){
       it('should be -1', function () {
-        type('+/-',1, '=');
+        type('±',1, '=');
         assert.equal(displayOutput(), '-1');
       });
     });
-    describe('8 +/- =', function(){
+    describe('8 ± =', function(){
       it('should be -8', function () {
-        type(8, '+/-', '=');
+        type(8, '±', '=');
         assert.equal(displayOutput(), '-8');
       });
     });
     describe('± 1 / 1 =', function(){
       it('should be -1', function () {
-        type('+/-', 1, '/', 1, '=');
+        type('±', 1, '/', 1, '=');
         assert.equal(displayOutput(), '-1');
       });
     });
     describe('1 ± / 1 =', function(){
       it('should be -1', function () {
-        type(1, '+/-', '/', 1, '=');
+        type(1, '±', '/', 1, '=');
         assert.equal(displayOutput(), '-1');
       });
     });
     describe('1 / -1 =', function(){
       it('should be -1', function () {
-        type(1, '/', '+/-', 1, '=');
+        type(1, '/', '±', 1, '=');
         assert.equal(displayOutput(), '-1');
       });
     });
