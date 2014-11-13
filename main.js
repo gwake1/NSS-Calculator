@@ -1,3 +1,17 @@
+ document.addEventListener("DOMContentLoaded", function() {
+
+document.addEventListener('click', function (){
+        $('.clickable').click(function(){
+                $("input:text").val(this.id);
+   console.log(this.id) 
+       /*    var currentValue = this.id.val;                
+   var theDisplay = document.getElementById('displayoutput').innerHTML=clickedId;
+        theDisplay.appendChild(this.Id);
+          //    (press(clickedId)); */
+  
+});
+       });
+
 function displayOutput(){
   return $('#displayoutput').val();
 }
@@ -27,14 +41,14 @@ function divide(a, b){
 }
 
 function inverse(a, b){
-  if(previousOperation === "divide"){
-    return ($('#displayoutput').val(previousResult) * -1)/b;
-  } else if(previousOperation === "multiply") {
-    return $('#displayoutput').val() * -1 * b;
-  } else {
+ // if(previousOperation === "divide"){
+ //   return ($('#displayoutput').val(previousResult) * -1)/b;
+ // } else if(previousOperation === "multiply") {
+ //   return $('#displayoutput').val() * -1 * b;
+ // } else {
     return -b;
   }
-}
+//}
 
 function clear(a, b){
   return '';
@@ -83,7 +97,7 @@ function press(buttonValue){
       calculate();
       $('#displayoutput').val(previousResult);
       break;
-    case '+/-':
+    case '±':
       // calculate();
       nextOperation = inverse;
       $('#displayoutput').val('');
@@ -93,3 +107,4 @@ function press(buttonValue){
       $('#displayoutput').val(current + buttonValue);
   }
 }
+});

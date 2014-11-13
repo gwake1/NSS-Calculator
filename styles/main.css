@@ -10,7 +10,7 @@ padding:  15px;
  * Buttons*
  * *************/
         /*****Styling*****/
-.buttons{
+.buttons, .clickable{
 border:1px solid #26759E;-webkit-box-shadow: #FEFFFF 0px 1px 3px inset;-moz-box-shadow: #FEFFFF 0px 1px 3px inset; box-shadow: #FEFFFF 0px 1px 3px inset; -webkit-border-radius: 7px; -moz-border-radius: 7px;border-radius: 7px;font-size:21px;font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: 0px 1px 0 rgba(255,255,255,0.5);font-weight:bold; color: #05142E;
  background-color: #f2f9fe; background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f9fe), to(#d6f0fd));
  background-image: -webkit-linear-gradient(top, #f2f9fe, #d6f0fd);
@@ -31,13 +31,16 @@ display: block;}
  * Screen*
  * *************/
 
-#screen{
+#displayoutput{
+        font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif;
+        font-size: 2.3em;
 border-color: black;
 border-style: solid;
 border-width: 2px;
 background-color: lightgrey;
 
     height: 50px;
+    width: 90%;
     padding: 0;
     margin: 5%;
 
